@@ -22,9 +22,4 @@ Class RemoveTaskController
         $this->todoModel->removeTask($taskInfo);
         return $response->withRedirect('/todo');
     }
-
-    public function hiddenInput($taskId)
-    {
-        return '<input type="hidden" name="newId" value="'.$taskId.'">';
-    }
 }
