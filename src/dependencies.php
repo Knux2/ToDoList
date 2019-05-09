@@ -19,4 +19,12 @@ return function (App $app) {
         $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
         return $logger;
     };
+
+    // db connection
+    $container['dbConnection'] = function ($c) {
+        $settings = $c->get('settings')['db'];
+        $db = new PDO($settings['host'].$settings['dbName'], $settings['userName']);
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+        return $db;
+    };
 };
