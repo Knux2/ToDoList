@@ -17,4 +17,5 @@ return function (App $app) {
 
     $app->get('/todo', 'ViewListController');
     $app->post('/add', 'AddTaskController');
+    $app->post('/remove', 'RemoveTaskController');
 };
