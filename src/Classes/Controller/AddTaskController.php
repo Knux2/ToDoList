@@ -5,16 +5,13 @@ namespace Portal\Controller;
 use Portal\Model\TodoModel;
 use Slim\Http\Request;
 use Slim\Http\Response;
-use Slim\Views\PhpRenderer;
 
 Class AddTaskController
 {
-    private $renderer;
     private $todoModel;
 
-    public function __construct(PhpRenderer $renderer, TodoModel $todoModel)
+    public function __construct(TodoModel $todoModel)
     {
-        $this->renderer = $renderer;
         $this->todoModel = $todoModel;
     }
 
