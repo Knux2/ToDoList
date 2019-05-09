@@ -27,4 +27,6 @@ return function (App $app) {
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
         return $db;
     };
+
+    $container['todoModel'] = new Portal\Factories\TodoModelFactory();
 };
