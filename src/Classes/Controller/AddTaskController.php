@@ -17,7 +17,9 @@ Class AddTaskController
 
     public function __invoke(Request $request, Response $response, $args)
     {
-        $args['tasks'] = $this->todoModel->addTask();
-        $this->renderer->render($response, 'todoList.phtml', $args);
+        $newTask = $request->getParsedBody();
+        $taskInfo = $newTask['addTask'];
+        $this->todoModel->addTask($taskInfo);
+        return $response->withRedirect('/todo');
     }
 }
