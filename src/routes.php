@@ -14,4 +14,6 @@ return function (App $app) {
         // Render index view
         return $container->get('renderer')->render($response, 'index.phtml', $args);
     });
+
+    $app->get('/todo', 'ViewListController');
 };
