@@ -9,6 +9,9 @@
     <?php
     foreach ($tasks as $task) {
         echo '<p>' . $task["task"] . '</p>';
+        echo '<form method="POST" action="/remove">
+              <input type="submit" value="Completed">
+              </form>';
     } ?>
     <form method="POST" action="/add">
         <textarea name="addTask"></textarea>
@@ -16,4 +19,3 @@
     </form>
 </body>
 </html>
-
