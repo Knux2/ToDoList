@@ -18,7 +18,7 @@ Class TodoModel
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function addList($id, $task)
+    public function addTask($id, $task)
     {
         $query = $this->dbConnection->prepare("INSERT INTO `list_table` (`id`, `task`) VALUES (:id, :task)");
         $query->bindParam(':id', $id);
