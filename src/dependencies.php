@@ -28,7 +28,8 @@ return function (App $app) {
         return $db;
     };
 
-    $container['AddTaskController'] = new Portal\Factories\AddTaskControllerFactory();
-    $container['ViewListController'] = new Portal\Factories\ViewListControllerFactory();
     $container['todoModel'] = new Portal\Factories\TodoModelFactory();
+    $container['ViewListController'] = new Portal\Factories\ViewListControllerFactory();
+    $container['AddTaskController'] = new Portal\Factories\AddTaskControllerFactory();
+    $container['RemoveTaskController'] = new Portal\Factories\RemoveTaskControllerFactory();
 };
