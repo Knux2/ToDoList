@@ -10,7 +10,7 @@
     foreach ($tasks as $task) {
         echo '<p>' . $task["task"] . '</p>';
     } ?>
-    <form method="POST">
+    <form method="POST" action="/add">
         <textarea name="add"></textarea>
         <input type="submit" value="Add" name="addTask">
     </form>
