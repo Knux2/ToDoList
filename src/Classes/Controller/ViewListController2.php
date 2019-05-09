@@ -7,7 +7,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Views\PhpRenderer;
 
-Class ViewListController
+Class ViewListController2
 {
     private $renderer;
     private $todoModel;

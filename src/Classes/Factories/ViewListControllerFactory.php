@@ -11,6 +11,6 @@ Class ViewListControllerFactory
         $renderer = $container->get('renderer');
         $todoModel = $container->get('todoModel');
         $dbConnection = $container->get('dbConnection');
-        return new \Portal\Controller\ViewListController($renderer, $todoModel, $dbConnection);
+        return new \Portal\Controller\ViewListController2($renderer, $todoModel, $dbConnection);
     }
 }
