@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +7,13 @@
 <body>
     <h1>My Todo List</h1>
     <?php
-
     foreach ($tasks as $task) {
         echo '<p>' . $task["task"] . '</p>';
-    }
-    ?>
-
+    } ?>
+    <form method="POST">
+        <textarea name="add"></textarea>
+        <input type="submit" value="Add" name="addTask">
+    </form>
 </body>
 </html>
 
