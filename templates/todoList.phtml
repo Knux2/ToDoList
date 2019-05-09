@@ -1,8 +1,4 @@
-<?php
 
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +7,14 @@
 </head>
 
 <body>
-    <h1>Things Have Been Added</h1>
+    <h1>My Todo List</h1>
+    <?php
+
+    foreach ($tasks as $task) {
+        echo '<p>' . $task["task"] . '</p>';
+    }
+    ?>
+
 </body>
 </html>
 
