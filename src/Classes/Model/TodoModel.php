@@ -24,4 +24,11 @@ Class TodoModel
         $query->bindParam(':task', $task);
         $query->execute();
     }
+
+    public function removeTask($deleteTask)
+    {
+        $query = $this->dbConnection->prepare("UPDATE `list_table` SET `deleted` = 1 WHERE `id` = :deleteTask;");
+        $query->bindparam(':deleteTask', $deleteTask);
+        $query->execute();
+    }
 }
