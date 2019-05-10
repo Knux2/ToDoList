@@ -20,10 +20,11 @@ Class TodoModel
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function addTask($task)
+    public function addTask($task, $listSelection)
     {
-        $query = $this->dbConnection->prepare("INSERT INTO `list_table` (`task`) VALUES (:task)");
+        $query = $this->dbConnection->prepare("INSERT INTO `list_table` (`task`, `list_selection`) VALUES (:task, :list_selection)");
         $query->bindParam(':task', $task);
+        $query->bindParam(':list_selection', $listSelection);
         $query->execute();
     }
 
