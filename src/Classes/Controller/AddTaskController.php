@@ -19,7 +19,8 @@ Class AddTaskController
     {
         $newTask = $request->getParsedBody();
         $taskInfo = $newTask['addTask'];
-        $this->todoModel->addTask($taskInfo);
+        $chooseList = $newTask['chooseTodo'];
+        $this->todoModel->addTask($taskInfo, $chooseList);
         return $response->withRedirect('/todo');
     }
 }
