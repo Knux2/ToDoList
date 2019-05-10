@@ -8,16 +8,22 @@
 </head>
 
 <body>
-    <form method="POST" action="/add">
-        <textarea name="addTask"></textarea>
-        <select class="dropDown" name="chooseTodo">
-            <?php
-            foreach($todoLists as $task) {
-                echo '<option value=' . $task["id"] . '>' . $task["to_do_list"] . '</option>';
-            } ?>
-        </select>
-        <input type="submit">
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto" style="width: 200px;">
+                <form method="POST" action="/add">
+                    <textarea name="addTask"></textarea>
+                    <select class="dropDown" name="chooseTodo">
+                        <?php
+                        foreach($todoLists as $task) {
+                            echo '<option value=' . $task["id"] . '>' . $task["to_do_list"] . '</option>';
+                        } ?>
+                    </select>
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -25,11 +31,11 @@
                 <?php
                 foreach ($tasks as $task) {
                     if($task["list_selection"] == 1)
-                        echo '<p>' . $task["task"] . '</p>' .
+                        echo '<p>' . $task["task"] .
                             '<form method="POST" action="/remove">
               <input type="hidden" name="removeTask" value="' . $task["id"] . '">
               <input type="submit" value="Completed">
-              </form>';
+              </form>' . '</p>';
                 } ?>
             </div>
             <div class="col-6">
@@ -37,11 +43,11 @@
                 <?php
                 foreach ($tasks as $task) {
                     if($task["list_selection"] == 2)
-                        echo '<p>' . $task["task"] . '</p>' .
+                        echo '<p>' . $task["task"] .
                             '<form method="POST" action="/remove">
               <input type="hidden" name="removeTask" value="' . $task["id"] . '">
               <input type="submit" value="Completed">
-              </form>';
+              </form>' . '</p>';
                 } ?>
             </div>
         </div>
