@@ -13,7 +13,9 @@ Class TodoModel
 
     public function getList()
     {
-        $query = $this->dbConnection->prepare("SELECT `id`, `task`, `list_selection` FROM `list_table` UNION SELECT ");
+        $query = $this->dbConnection->prepare("SELECT `list_table`.`id`, `list_table`.`task`, `list_table`.`list_selection`, `choose_todos`.`to_do_list` FROM `list_table`
+                                                LEFT JOIN `choose_todos`
+                                                ON `list_table`.`list_selection` = `choose_todos`.`id`");
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
