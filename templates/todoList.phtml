@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!--    <link rel='stylesheet' type='text/css' href='../public/style/normalize.css'>-->
-<!--    <link rel='stylesheet' type='text/css' href='../public/style/style.css'>-->
+    <link rel='stylesheet' type='text/css' href='../public/style/normalize.css'>
+    <link rel='stylesheet' type='text/css' href='../public/style/style.css'>
     <title>Bens Todo App</title>
 </head>
 
@@ -14,30 +14,37 @@
             <?php
             foreach($todoLists as $task) {
                 echo '<option value=' . $task["id"] . '>' . $task["to_do_list"] . '</option>';
-            }
-            ?>
+            } ?>
         </select>
         <input type="submit">
     </form>
-    <h1>Dog Related Todo List</h1>
-    <?php
-    foreach ($tasks as $task) {
-        if($task["list_selection"] == 1)
-        echo '<p>' . $task["task"] . '</p>' .
-        '<form method="POST" action="/remove">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>Dog Related Todo List</h1>
+                <?php
+                foreach ($tasks as $task) {
+                    if($task["list_selection"] == 1)
+                        echo '<p>' . $task["task"] . '</p>' .
+                            '<form method="POST" action="/remove">
               <input type="hidden" name="removeTask" value="' . $task["id"] . '">
               <input type="submit" value="Completed">
               </form>';
-    } ?>
-    <h1>Other Todo List</h1>
-    <?php
-    foreach ($tasks as $task) {
-        if($task["list_selection"] == 2)
-        echo '<p>' . $task["task"] . '</p>' .
-            '<form method="POST" action="/remove">
+                } ?>
+            </div>
+            <div class="col-6">
+                <h1>Other Todo List</h1>
+                <?php
+                foreach ($tasks as $task) {
+                    if($task["list_selection"] == 2)
+                        echo '<p>' . $task["task"] . '</p>' .
+                            '<form method="POST" action="/remove">
               <input type="hidden" name="removeTask" value="' . $task["id"] . '">
               <input type="submit" value="Completed">
               </form>';
-    } ?>
+                } ?>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
