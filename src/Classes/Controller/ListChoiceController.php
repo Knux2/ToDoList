@@ -7,7 +7,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Views\PhpRenderer;
 
-Class ListChoicesController
+Class ListChoiceController
 {
     private $renderer;
     private $todoModel;
