@@ -7,7 +7,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Views\PhpRenderer;
 
-Class ViewListController2
+Class ViewFirstListController
 {
     private $renderer;
     private $todoModel;
@@ -20,7 +20,7 @@ Class ViewListController2
 
     public function __invoke(Request $request, Response $response, $args)
     {
-        $args['tasks'] = $this->todoModel->getList();
+        $args['tasks'] = $this->todoModel->getFirstList();
         $this->renderer->render($response, 'todoList.phtml', $args);
     }
 }
