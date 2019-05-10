@@ -11,11 +11,9 @@ Class TodoModel
         $this->dbConnection = $db;
     }
 
-    public function getList()
+    public function getTaskList()
     {
-        $query = $this->dbConnection->prepare("SELECT `list_table`.`id`, `list_table`.`task`, `list_table`.`list_selection`, `choose_todos`.`to_do_list` FROM `list_table`
-                                                LEFT JOIN `choose_todos`
-                                                ON `list_table`.`list_selection` = `choose_todos`.`id`");
+        $query = $this->dbConnection->prepare("SELECT `id`, `task`, `list_selection` FROM `list_table`");
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
@@ -33,5 +31,12 @@ Class TodoModel
         $query = $this->dbConnection->prepare("UPDATE `list_table` SET `deleted` = 1 WHERE `id` = :deleteTask;");
         $query->bindparam(':deleteTask', $deleteTask);
         $query->execute();
+    }
+
+    public function getTodoLists()
+    {
+        $query = $this->dbConnection->prepare("SELECT `id`, `to_do_list` FROM `choose_todos`;");
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
