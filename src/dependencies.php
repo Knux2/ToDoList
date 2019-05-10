@@ -32,4 +32,5 @@ return function (App $app) {
     $container['ViewFirstListController'] = new Portal\Factories\ViewFirstListControllerFactory();
     $container['AddTaskController'] = new Portal\Factories\AddTaskControllerFactory();
     $container['RemoveTaskController'] = new Portal\Factories\RemoveTaskControllerFactory();
+    $container['ListChoiceController'] = new Portal\Factories\ListChoiceControllerFactory();
 };

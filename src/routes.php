@@ -15,7 +15,7 @@ return function (App $app) {
         return $container->get('renderer')->render($response, 'index.phtml', $args);
     });
 
-    $app->get('/todo', 'ViewFirstListController');
+    $app->get('/todo', 'ViewFirstListController', 'ListChoiceController');
     $app->post('/add', 'AddTaskController');
     $app->post('/remove', 'RemoveTaskController');
 };
