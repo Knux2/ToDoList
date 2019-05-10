@@ -29,7 +29,8 @@ return function (App $app) {
     };
 
     $container['todoModel'] = new Portal\Factories\TodoModelFactory();
-    $container['ViewListController'] = new Portal\Factories\ViewFirstListControllerFactory();
+    $container['ViewFirstListController'] = new Portal\Factories\ViewFirstListControllerFactory();
+    $container['ViewSecondListController'] = new Portal\Factories\ViewSecondListControllerFactory();
     $container['AddTaskController'] = new Portal\Factories\AddTaskControllerFactory();
     $container['RemoveTaskController'] = new Portal\Factories\RemoveTaskControllerFactory();
 };
