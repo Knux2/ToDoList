@@ -31,4 +31,11 @@ Class TodoModel
         $query->bindparam(':deleteTask', $deleteTask);
         $query->execute();
     }
+
+    public function listChoices()
+    {
+        $query = $this->dbConnection->prepare("SELECT `id`, `to_do_list` FROM `choose_todos`");
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }
