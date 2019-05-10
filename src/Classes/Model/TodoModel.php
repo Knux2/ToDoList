@@ -11,9 +11,16 @@ Class TodoModel
         $this->dbConnection = $db;
     }
 
-    public function getList()
+    public function getFirstList()
     {
-        $query = $this->dbConnection->prepare("SELECT `id`, `task` FROM `list_table` WHERE `deleted` = 0");
+        $query = $this->dbConnection->prepare("SELECT `id`, `task` FROM `list_table` WHERE `list_selection` = 1");
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getSecondList()
+    {
+        $query = $this->dbConnection->prepare("SELECT `id`, `task` FROM `list_table` WHERE `list_selection` = 2");
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
