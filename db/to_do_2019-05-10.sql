@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.43)
 # Database: to_do
-# Generation Time: 2019-05-10 10:39:08 +0000
+# Generation Time: 2019-05-10 10:58:36 +0000
 # ************************************************************
 
 
@@ -18,6 +18,29 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table choose_todos
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `choose_todos`;
+
+CREATE TABLE `choose_todos` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `to_do_list` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `choose_todos` WRITE;
+/*!40000 ALTER TABLE `choose_todos` DISABLE KEYS */;
+
+INSERT INTO `choose_todos` (`id`, `to_do_list`)
+VALUES
+	(1,'Dog Related'),
+	(2,'Other');
+
+/*!40000 ALTER TABLE `choose_todos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table list_table
@@ -38,7 +61,7 @@ LOCK TABLES `list_table` WRITE;
 
 INSERT INTO `list_table` (`id`, `task`, `deleted`, `list_selection`)
 VALUES
-	(1,'Buy a Dog',0,1),
+	(1,'Buy a Dog',1,1),
 	(2,'Train the Dog',0,1),
 	(3,'Walk the Dog',0,1),
 	(4,'grsgsdf',1,2),
