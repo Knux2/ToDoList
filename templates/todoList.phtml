@@ -13,13 +13,13 @@
         <select class="dropDown" name="chooseTodo">
             <?php
             foreach($todoLists as $task) {
-                echo '<option value=' . $task["list_selection"] . '>' . $task["to_do_list"] . '</option>';
+                echo '<option value=' . $task["id"] . '>' . $task["to_do_list"] . '</option>';
             }
             ?>
         </select>
         <input type="submit">
     </form>
-    <h1>My First Todo List</h1>
+    <h1>Dog Related Todo List</h1>
     <?php
     foreach ($tasks as $task) {
         if($task["list_selection"] == 1)
@@ -29,7 +29,7 @@
               <input type="submit" value="Completed">
               </form>';
     } ?>
-    <h1>My Second Todo List</h1>
+    <h1>Other Todo List</h1>
     <?php
     foreach ($tasks as $task) {
         if($task["list_selection"] == 2)
