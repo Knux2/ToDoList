@@ -11,7 +11,10 @@
     <form method="POST" action="/add">
         <textarea name="addTask"></textarea>
         <select class="dropDown" name="chooseTodo">
-
+            <?php foreach($tasks as $task) {
+                echo '<option value=' . $task["list_selection"] . '>' . $task["to_do_list"] . '</option>';
+            }
+            ?>
         </select>
         <input type="submit">
     </form>
