@@ -13,7 +13,7 @@ Class TodoModel
 
     public function getList()
     {
-        $query = $this->dbConnection->prepare("SELECT `id`, `task` FROM `list_table`");
+        $query = $this->dbConnection->prepare("SELECT `id`, `task`, `list_selection` FROM `list_table`");
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
