@@ -20,7 +20,7 @@ Class ViewFirstListController
 
     public function __invoke(Request $request, Response $response, $args)
     {
-        $args['tasks'] = $this->todoModel->getFirstList();
+        $args['tasks'] = $this->todoModel->getList();
         $this->renderer->render($response, 'todoList.phtml', $args);
     }
 }
